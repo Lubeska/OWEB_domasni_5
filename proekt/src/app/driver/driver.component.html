@@ -1,0 +1,52 @@
+<!--<div [ngClass] = "klasi()">
+    <div class="course-title">
+        {{reden+'. '+vozac.name}}
+    </div>
+    <div class="course-description">
+        Team: {{vozac.team}}
+    </div>
+    <div class = "course-category" [ngSwitch] = "vozac.category">
+        <div class="category" *ngSwitchCase="'Okej'">Okej</div>
+        <div class="category" *ngSwitchCase="'Dobar'">Dobar</div>
+        <div class="category" *ngSwitchCase="'Sredno Zalosno'">Sredno Zalosno</div>
+        <div class="category" *ngSwitchDefault>Nema vozacka</div>
+    --><!--Category: {{vozac.category}}-->
+<!--</div>
+    <div>
+        Points: {{vozac.points}}
+    </div>
+    <ng-template #noImg>
+        <p>Nemase resursi</p>
+    </ng-template>
+    <img [src] = "vozac.iconUrl" *ngIf="vozac.iconUrl; else noImg">
+
+    <button (click)="klik()">
+        Klikni!!
+    </button>
+</div>-->
+
+<div [ngStyle] = "getStyle()">
+    <div class="course-title">
+        {{ reden + '.' + vozac.name }}
+    </div>
+    <div class="course-description">
+        Team: {{ vozac.team }}
+    </div>
+    <div class="course-category" [ngSwitch]="vozac.category">
+        <div class="category" *ngSwitchCase="'Okej'">Okej</div>
+        <div class="category" *ngSwitchCase="'Dobar'">Dobar</div>
+        <div class="category" *ngSwitchCase="'Sredno Zalosno'">Sredno Zalosno</div>
+        <div class="category" *ngSwitchDefault>Nema vozacka</div>
+    </div>
+    <div>
+        Points: {{ vozac.points }}
+    </div>
+    <ng-template #noImg>
+        <p>Nemase resursi</p>
+    </ng-template>
+    <img [src]="vozac.iconUrl" [ngStyle] = "getPhotoStyles()" *ngIf="vozac.iconUrl; else noImg">
+
+    <button (click)="klik()" [ngStyle]="getButtonStyle()">
+        Klikni!!
+    </button>
+</div>
